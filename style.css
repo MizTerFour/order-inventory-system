@@ -1,0 +1,251 @@
+/* ==========================================================================
+   1. GLOBAL STYLES (พื้นฐานของหน้าเว็บ)
+   ========================================================================== */
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: #f4f6f9;
+    color: #333;
+}
+
+.content {
+    padding: 30px;
+    margin-left: 220px; /* เว้นที่ให้ Sidebar */
+}
+
+.content h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #1f2937;
+}
+
+/* ==========================================================================
+   2. SIDEBAR (เมนูข้าง)
+   ========================================================================== */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100vh;
+    background: #1e293b;
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 100;
+}
+
+.sidebar .logo {
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.sidebar nav a {
+    display: block;
+    color: #cbd5f5;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    transition: 0.3s;
+}
+
+.sidebar nav a:hover {
+    background: #334155;
+    color: #fff;
+}
+
+.sidebar .logout {
+    margin-top: 30px;
+    background: #b91c1c;
+    color: #fff !important;
+    text-align: center;
+}
+
+.sidebar .logout:hover {
+    background: #dc2626;
+}
+
+/* ==========================================================================
+   3. BUTTONS (ปุ่มต่างๆ)
+   ========================================================================== */
+/* ปุ่มมาตรฐานใน Content */
+.content > a, .btn-add {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #1075b9;
+    color: #fff !important;
+    text-decoration: none !important;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    transition: background 0.3s ease;
+}
+
+.content > a:hover, .btn-add:hover {
+    background: #0d5a8f;
+}
+
+/* ==========================================================================
+   4. TABLE STYLES (การจัดการตาราง)
+   ========================================================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+table th {
+    background: #f1f5f9;
+    color: #374151;
+    font-weight: 600;
+    text-align: left;
+    padding: 12px;
+    font-size: 14px;
+    white-space: nowrap;
+    border-right: 1px solid #e5e7eb;
+}
+
+table td {
+    padding: 12px;
+    font-size: 14px;
+    border-top: 1px solid #e5e7eb;
+    border-right: 1px solid #e5e7eb;
+}
+
+table tr:hover {
+    background: #f0f7ff;
+}
+
+table th:last-child, table td:last-child {
+    border-right: none;
+}
+
+.amount {
+    text-align: right;
+    font-weight: 600;
+    color: #111827;
+}
+
+/* Action Links ในตาราง (ปุ่มแก้ไข/ลบ) */
+table td a {
+    display: inline-block;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 999px;
+    text-decoration: none !important;
+    margin: 2px 4px;
+    transition: all 0.2s ease;
+}
+
+/* ปุ่มแรก (มักเป็น Edit) */
+table td a:first-child {
+    background: #eef2ff;
+    color: #1d4ed8;
+    border: 1px solid #c7d2fe;
+}
+
+table td a:first-child:hover {
+    background: #c7d2fe;
+    transform: translateY(-1px);
+}
+
+/* ปุ่มสุดท้าย (มักเป็น Delete) */
+table td a:last-child {
+    background: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+}
+
+table td a:last-child:hover {
+    background: #fecaca;
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   5. STATUS BADGES (ป้ายสถานะ)
+   ========================================================================== */
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 12px;
+    border-radius: 999px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.badge.paid        { background: #ecfdf5; color: #047857; border: 1px solid #10b981; }
+.badge.pending     { background: #fff7ed; color: #9a3412; border: 1px solid #f97316; }
+.badge.overdue     { background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; }
+.badge.receipt     { background: #eff6ff; color: #1d4ed8; border: 1px solid #93c5fd; }
+.badge.no-receipt  { background: #f3f4f6; color: #6b7280; border: 1px solid #d1d5db; }
+
+/* ==========================================================================
+   6. DATATABLES PLUGINS (ส่วนเสริมของระบบค้นหา)
+   ========================================================================== */
+.dataTables_wrapper {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-top: 10px;
+}
+
+.dataTables_filter { margin-bottom: 15px; }
+
+.dataTables_filter input {
+    border: 1px solid #d1d5db !important;
+    border-radius: 6px !important;
+    padding: 6px 12px !important;
+    outline: none;
+    margin-left: 10px !important;
+}
+
+.dataTables_filter input:focus {
+    border-color: #1075b9 !important;
+    box-shadow: 0 0 0 3px rgba(16, 117, 185, 0.1);
+}
+
+/* Pagination */
+.dataTables_paginate { margin-top: 15px !important; }
+
+.dataTables_paginate .paginate_button {
+    padding: 5px 12px !important;
+    border-radius: 4px !important;
+    border: 1px solid #e5e7eb !important;
+    margin-left: 5px !important;
+    background: #fff !important;
+}
+
+.dataTables_paginate .paginate_button.current {
+    background: #1075b9 !important;
+    color: white !important;
+    border-color: #1075b9 !important;
+}
+
+/* ==========================================================================
+   7. RESPONSIVE (มือถือ)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none; /* ซ่อน Sidebar ในมือถือ หรือทำ Hamburger Menu */
+    }
+    
+    .content {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    table {
+        font-size: 12px;
+        display: block;
+        overflow-x: auto; /* ให้ตารางเลื่อนซ้ายขวาได้ */
+    }
+}

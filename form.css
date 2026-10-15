@@ -1,0 +1,194 @@
+/* ==========================================================================
+   1. FORM LAYOUT (โครงสร้างหน้าฟอร์ม)
+   ========================================================================== */
+.content.form-page {
+    display: flex;
+    justify-content: center;
+}
+
+.form-wrapper {
+    width: 100%;
+    max-width: 600px;
+}
+
+.form-card {
+    background: #ffffff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    width: 100%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.form-title {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+/* ==========================================================================
+   2. FORM GROUPS & LABELS (ส่วนของกลุ่มอินพุตและป้ายชื่อ)
+   ========================================================================== */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #374151;
+}
+
+/* ==========================================================================
+   3. INPUTS, TEXTAREA & SELECT (ช่องกรอกข้อมูลและตัวเลือก)
+   ========================================================================== */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    outline: none;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Select Dropdown */
+.form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    outline: none;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    /* ลูกศร dropdown */
+    background-image: url("data:image/svg+xml,%3Csvg fill='none' stroke='%236b7280' stroke-width='2' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+}
+
+.form-group select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+
+/* ==========================================================================
+   4. BUTTONS (แก้ไขใหม่: ปุ่มแคปซูลเรียงกัน)
+   ========================================================================== */
+
+/* จัดกล่องรวมปุ่มให้เรียงเป็นแนวนอน */
+.form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* จัดชิดซ้าย */
+    gap: 10px;
+    /* ระยะห่างระหว่างปุ่ม */
+    margin-top: 25px;
+}
+
+/* สไตล์พื้นฐานร่วมกันของทั้งสองปุ่ม */
+.btn-secondary,
+.btn-submit {
+    display: inline-block;
+    padding: 8px 18px;
+    /* ขนาดของปุ่ม */
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 999px;
+    /* หัวใจสำคัญ! ทำให้เป็นทรงแคปซูล */
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    /* เตรียมเส้นขอบไว้ */
+    line-height: normal;
+}
+
+/* --- ปุ่ม "กลับ" (สไตล์ปุ่มรอง สีเทาอ่อน) --- */
+.btn-secondary {
+    background: #f3f4f6;
+    color: #374151;
+    border-color: #d1d5db;
+}
+
+.btn-secondary:hover {
+    background: #e5e7eb;
+    color: #111827;
+    border-color: #9ca3af;
+}
+
+/* --- ปุ่ม "บันทึก" (สไตล์ปุ่มหลัก สีน้ำเงิน) --- */
+.btn-submit {
+    width: auto;
+    /* สำคัญ: ยกเลิกการขยายเต็มจอ */
+    background: #23eb1d;
+    color: #fff;
+}
+
+.btn-submit:hover {
+    background: #189e18;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* เพิ่มเงาตอนเอาเมาส์ชี้ */
+}
+
+/* เก็บ style ของปุ่ม print ไว้เผื่อใช้ในหน้าอื่น */
+.btn-print {
+    display: inline-block;
+    padding: 8px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    background: #10b981;
+    color: #ffffff !important;
+    border: none;
+    border-radius: 999px;
+    /* ทำให้เป็นแคปซูล */
+    text-decoration: none !important;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-print:hover {
+    background: #059669;
+    transform: translateY(-1px);
+    /* ขยับขึ้นนิดนึงตอนชี้ */
+}
+
+/* --- ปุ่ม พิมพ์ใบเสร็จ / ออกใบเสร็จ (สีฟ้า ทรงแคปซูล) --- */
+.btn-printpdf {
+    display: inline-block;
+    padding: 8px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    background: #c3ad2f;
+    /* สีฟ้า */
+    color: #ffffff !important;
+    border: none;
+    border-radius: 999px;
+    /* ทำให้เป็นแคปซูล */
+    text-decoration: none !important;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-printpdf:hover {
+    background: #9a8925;
+    transform: translateY(-1px);
+}

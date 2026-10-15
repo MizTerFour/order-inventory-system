@@ -1,0 +1,4 @@
+/vendor
+/uploads/slips/*
+!/uploads/slips/.gitkeep
+phinx.php
